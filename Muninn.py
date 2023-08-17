@@ -168,7 +168,7 @@ def packet_callback(packet):
         # Log regular activity
         if ICMP in packet:
             if src_ip not in initial_alerts_count:
-                print("Look alive my G!! " + src_ip + " Just pinged " + dst_ip + " @ " + timestamp)
+                print("Look alive my Guy or Gal! " + src_ip + " Just pinged " + dst_ip + " @ " + timestamp)
                 initial_alerts_count[src_ip] = 1
             else:
                 log_host(src_ip)
@@ -221,7 +221,7 @@ write_excluded_hosts(os.path.join(LOG_DIRECTORY, EXCLUDED_HOSTS_FILE), excluded_
 while True:
    # timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     # Print a message that we're starting a new scan with the updated target
-    print(f"[+] Time to hunt for some opps!! Starting network scan for : {target}...")
+    print(f"[+] Time to hunt! Starting network scan for : {target}...")
 
     # Call the scan_network function with the updated target and the newly excluded hosts
     scan_network(target, excluded_hosts, new_hosts_set)
